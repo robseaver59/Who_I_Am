@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rob Seaver | Executive Producer & Experience Designer</title>
+    <style>
+        :root {
+            --bg-color: #0f1115;
+            --card-bg: #181b21;
+            --accent-yellow: #d4e157;
+            --text-main: #f0f2f5;
+            --text-muted: #9da5b4;
+            --border-color: #2a2e37;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Header / Hero */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .brand-tag {
+            display: inline-block;
+            color: var(--accent-yellow);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 25px auto;
+        }
+
+        .guarantee-badge {
+            display: inline-block;
+            background: var(--card-bg);
+            border: 1px solid var(--accent-yellow);
+            color: var(--text-main);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* Bio Section */
+        .bio-section {
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .bio-section p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .bio-section strong {
+            color: var(--text-main);
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--text-main);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* VISUAL GALLERY GRID */
+        .portfolio-section {
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-yellow);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #22252d;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 15px;
+        }
+
+        .gallery-caption h4 {
+            color: var(--accent-yellow);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .gallery-caption p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Core Capabilities Grid */
+        .capabilities {
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            color: var(--accent-yellow);
+            margin-bottom: 12px;
+            font-size: 1.15rem;
+        }
+
+        .card ul {
+            list-style: none;
+        }
+
+        .card li {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .card li::before {
+            content: "•";
+            color: var(--accent-yellow);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Ironclad Standards */
+        .standards {
+            padding: 40px 20px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            margin: 40px 0;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .standards-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .standard-item h4 {
+            font-size: 1.4rem;
+            color: var(--accent-yellow);
+        }
+
+        .standard-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Call to Action */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-yellow);
+            color: #000;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .contact-sub {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Hero Header -->
+        <header>
+            <span class="brand-tag">Ask For Rob</span>
+            <h1>ROB SEAVER</h1>
+            <p class="subtitle">Executive Show Producer, Technical Director & Experience Designer</p>
+            <div class="guarantee-badge">
+                On Time. On Budget. Promised. Every Time.
+            </div>
+        </header>
+
+        <!-- Bio / Grounded Intro -->
+        <section class="bio-section">
+            <p><strong>I deliver live experiences that run without friction.</strong></p>
+            <p>Whether it's managing municipal city takeovers, building high-end AV architecture, or hosting keynotes with Fortune 500 leadership, I own the execution pipeline from pitch to strike.</p>
+            <p>No bloated agency middle management, no excuses—just single-source accountability and proven execution.</p>
+        </section>
+
+        <!-- VISUAL PROOF GALLERY -->
+        <section class="portfolio-section">
+            <h2 class="section-title">Proof of Work</h2>
+            <div class="gallery-grid">
+                
+                <!-- Card 1: Mainstage -->
+                <div class="gallery-card">
+                    <img src="assets/mainstage.jpg" alt="Mainstage Production" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h4>Mainstage Architecture</h4>
+                        <p>Custom LED walls, ground-supported lighting, and IMAG multi-cam control.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Executive Moderation -->
+                <div class="gallery-card">
+                    <img src="assets/keynote.jpg" alt="C-Suite Keynote" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h4>Executive Moderation</h4>
+                        <p>Hosting live keynotes and fireside chats with enterprise business leaders.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Municipal Takeovers -->
+                <div class="gallery-card">
+                    <img src="assets/city-takeover.jpg" alt="City Takeover Branding" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h4>City Takeovers & Marquee</h4>
+                        <p>Large-scale municipal branding, wayfinding, and convention city footprints.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4: High-Tech & Experiential -->
+                <div class="gallery-card">
+                    <img src="assets/robotics.jpg" alt="Live Tech Demos" class="gallery-img">
+                    <div class="gallery-caption">
+                        <h4>Experiential & Live Tech</h4>
+                        <p>Integrating live robotics, street-style creators, and interactive VIP activations.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Operational Pillars Grid -->
+        <section class="capabilities">
+            <h2 class="section-title">Core Capability</h2>
+            <div class="grid">
+                
+                <div class="card">
+                    <h3>1. Live Event Architecture</h3>
+                    <ul>
+                        <li>Full municipal & city-level takeovers</li>
+                        <li>Digital marquee & wayfinding control</li>
+                        <li>Ground-supported audio & custom DMX lighting</li>
+                        <li>Low-latency IMAG & stage signal routing</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>2. Mainstage & Talent Control</h3>
+                    <ul>
+                        <li>C-Suite fireside chat moderation</li>
+                        <li>Live robotics & high-stakes tech demos</li>
+                        <li>Viral creator & celebrity talent handling</li>
+                        <li>Multi-track conference management</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>3. High-Touch Activations</h3>
+                    <ul>
+                        <li>VIP member & executive experiences</li>
+                        <li>Custom experiential venue concepts</li>
+                        <li>Full-scale concourse branding wraps</li>
+                        <li>Turnkey equipment deployment</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Ironclad Rules -->
+        <section class="standards">
+            <h2 class="section-title">The Operating Standard</h2>
+            <div class="standards-grid">
+                <div class="standard-item">
+                    <h4>ON TIME</h4>
+                    <p>Zero schedule drift.</p>
+                </div>
+                <div class="standard-item">
+                    <h4>ON BUDGET</h4>
+                    <p>Transparent & predictable execution.</p>
+                </div>
+                <div class="standard-item">
+                    <h4>1% BETTER</h4>
+                    <p>Every detail, every single time.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Direct Contact Footer -->
+        <footer>
+            <a href="mailto:rob@askforrob.com" class="btn">Get in Touch</a>
+            <p class="contact-sub">Direct Production & Experience Consulting</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
